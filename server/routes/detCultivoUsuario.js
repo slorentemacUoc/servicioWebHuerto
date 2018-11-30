@@ -31,7 +31,7 @@ app.post('/detCultivoUsuario', function(req, res){
         cosecha: body.cosecha,
         siembra: body.siembra,
         crecimiento: body.crecimiento,
-        trasplantar: body.trasplantar,
+        transplantar: body.transplantar,
         notificarRegar: body.notificarRegar,
         notificarPoda: body.notificarPoda,
         notificarTrasplantar: body.notificarTrasplantar,
