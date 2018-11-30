@@ -61,6 +61,10 @@ let cultivoSchema = new Schema({
         type:Number
     },
 
+    descSiembra:{
+        type:String
+    },
+
     descCosechar:{
         type:String
     },

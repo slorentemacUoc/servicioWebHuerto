@@ -33,7 +33,24 @@ let detCultivoUsuarioSchema = new Schema({
 
     notificarTransplantar:{
         type:Boolean
+    },
+
+    descSiembra:{
+        type:String
+    },
+
+    descCosecha:{
+        type:String
+    },
+
+    descCrecimiento:{
+        type:String
+    },
+
+    descTrasplantar:{
+        type:String
     }
+
 });
 
 module.exports = mongoose.model('detCultivoUsuario', detCultivoUsuarioSchema);
