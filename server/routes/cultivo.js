@@ -36,7 +36,7 @@ app.post('/cultivos', function(req, res){
         necesitaPoda : body.necesitaPoda,
         frecuenciaRiego : body.frecuenciaRiego,
         abonos : body.abonos,
-        solsombra : body.solsombra,
+        solSombra : body.solSombra,
         tempMax : body.tempMax,
         tempMin : body.tempMin,
         numMesesSiembra : body.numMesesSiembra,
@@ -44,7 +44,7 @@ app.post('/cultivos', function(req, res){
         descCosechar : body.descCosechar,
         descSiembra : body.descSiembra,
         descCrecimiento : body.descCrecimiento,
-        descTransplantar : body.descTransplantar,
+        descrTransplantar : body.descrTransplantar,
         imgCultivo : body.imgCultivo,
         imgMeses : body.imgMeses
     });
