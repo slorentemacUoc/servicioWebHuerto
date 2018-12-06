@@ -46,7 +46,8 @@ app.post('/cultivos', function(req, res){
         descCrecimiento : body.descCrecimiento,
         descrTransplantar : body.descrTransplantar,
         imgCultivo : body.imgCultivo,
-        imgMeses : body.imgMeses
+        imgMeses : body.imgMeses,
+        localizacion : body.localizacion
     });
 
     cultivo.save((err, cultivoDB) =>{

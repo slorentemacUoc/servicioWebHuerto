@@ -38,7 +38,9 @@ app.post('/detCultivoUsuario', function(req, res){
         descSiembra: body.descSiembra,
         descCosecha: body.descCosecha,
         descTrasplantar: body.descTrasplantar,
-        descCrecimiento: body.descCrecimiento
+        descCrecimiento: body.descCrecimiento,
+        numMesesSiembra: body.numMesesSiembra,
+        numMesesCrecimiento: body.numMesesCrecimiento
 
     });
 

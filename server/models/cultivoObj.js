@@ -83,6 +83,10 @@ let cultivoSchema = new Schema({
 
     imgMeses:{
         type:String
+    },
+
+    localizacion:{
+        type:String
     }
 
 });

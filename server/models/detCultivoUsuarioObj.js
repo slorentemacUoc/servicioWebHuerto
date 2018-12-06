@@ -49,6 +49,14 @@ let detCultivoUsuarioSchema = new Schema({
 
     descTrasplantar:{
         type:String
+    },
+
+    numMesesSiembra:{
+        type:Number
+    },
+
+    numMesesCrecimiento:{
+        type:Number
     }
 
 });
