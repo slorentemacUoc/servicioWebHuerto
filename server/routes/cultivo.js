@@ -23,7 +23,7 @@ app.get('/cultivos:id', function(req, res){
     });
 });
 
-app.get('/cultivos', function(req, res){
+app.get('/cultivos:all', function(req, res){
     
 
     Cultivo.find({}).exec((err, cultivo) => {
