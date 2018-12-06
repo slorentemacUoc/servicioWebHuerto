@@ -5,6 +5,24 @@ const Cultivo = require('../models/cultivoObj');
 const app = express();
 
 
+app.get('/cultivos:id', function(req, res){
+    
+    let id = req.params.id;
+
+    Cultivo.find({_id: id}).exec((err, cultivo) => {
+        if(err){
+            return res.status(400).json({
+                ok:false,
+                err
+            })
+        }
+        res.json({
+            ok:true,
+            cultivo
+        });
+    });
+});
+
 app.get('/cultivos', function(req, res){
     
 
@@ -22,23 +40,7 @@ app.get('/cultivos', function(req, res){
     });
 });
 
-app.get('/cultivos:id', function(req, res){
-    
-    let id = req.params.id;
 
-    DetCultivoUsuario.find({_id: id}).exec((err, cultivo) => {
-        if(err){
-            return res.status(400).json({
-                ok:false,
-                err
-            })
-        }
-        res.json({
-            ok:true,
-            cultivo
-        });
-    });
-});
 
 app.post('/cultivos', function(req, res){
     
