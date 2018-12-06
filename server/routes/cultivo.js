@@ -22,6 +22,24 @@ app.get('/cultivos', function(req, res){
     });
 });
 
+app.get('/cultivos', function(req, res){
+    
+    let id = req.query.id || ''
+
+    DetCultivoUsuario.find({_id: id}).exec((err, cultivo) => {
+        if(err){
+            return res.status(400).json({
+                ok:false,
+                err
+            })
+        }
+        res.json({
+            ok:true,
+            cultivo
+        });
+    });
+});
+
 app.post('/cultivos', function(req, res){
     
     let body = req.body;
