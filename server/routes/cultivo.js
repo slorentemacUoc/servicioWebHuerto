@@ -5,39 +5,40 @@ const Cultivo = require('../models/cultivoObj');
 const app = express();
 
 
-app.get('/cultivos:id', function(req, res){
-    
-    let id = req.params.id;
 
-    Cultivo.find({_id: id}).exec((err, cultivo) => {
-        if(err){
-            return res.status(400).json({
-                ok:false,
-                err
-            })
-        }
-        res.json({
-            ok:true,
-            cultivo
+app.get('/cultivos', function(req, res){
+
+    let id = req.query.id
+
+    if(id != null ){
+        Cultivo.find({_id:id}).exec((err, cultivo) => {
+            if(err){
+                return res.status(400).json({
+                    ok:false,
+                    err
+                })
+            }
+            res.json({
+                ok:true,
+                cultivo
+            });
         });
-    });
-});
-
-app.get('/cultivos:all', function(req, res){
-    
-
-    Cultivo.find({}).exec((err, cultivo) => {
-        if(err){
-            return res.status(400).json({
-                ok:false,
-                err
-            })
-        }
-        res.json({
-            ok:true,
-            cultivo
+    }else{
+        Cultivo.find({}).exec((err, cultivo) => {
+            if(err){
+                return res.status(400).json({
+                    ok:false,
+                    err
+                })
+            }
+            res.json({
+                ok:true,
+                cultivo
+            });
         });
-    });
+    }
+
+    
 });
 
 
