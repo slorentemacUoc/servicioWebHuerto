@@ -22,9 +22,9 @@ app.get('/cultivos', function(req, res){
     });
 });
 
-app.get('/cultivos', function(req, res){
+app.get('/cultivos:id', function(req, res){
     
-    let id = req.query.id || ''
+    let id = req.params.id;
 
     DetCultivoUsuario.find({_id: id}).exec((err, cultivo) => {
         if(err){
