@@ -35,12 +35,6 @@ app.post('/detCultivoUsuario', function(req, res){
         notificarRegar: body.notificarRegar,
         notificarPoda: body.notificarPoda,
         notificarTransplantar: body.notificarTransplantar,
-        descSiembra: body.descSiembra,
-        descCosecha: body.descCosecha,
-        descTrasplantar: body.descTrasplantar,
-        descCrecimiento: body.descCrecimiento,
-        numMesesSiembra: body.numMesesSiembra,
-        numMesesCrecimiento: body.numMesesCrecimiento
 
     });
 
