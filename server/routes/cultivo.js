@@ -4,12 +4,12 @@ const Cultivo = require('../models/cultivoObj');
 
 const app = express();
 
-
-
+//Obtiene los cultivo o cultivo buscados en función de si el id del cultivo es facilidato en la
+//consulta o no
 app.get('/cultivos', function(req, res){
 
     let id = req.query.id
-
+    //Si el id es distinto de vacío se devuelve el cultivo con dicho identificador
     if(id != null ){
         Cultivo.find({_id:id}).exec((err, cultivo) => {
             if(err){
@@ -24,6 +24,7 @@ app.get('/cultivos', function(req, res){
             });
         });
     }else{
+        //En caso contrario deveulve todos los cultivos disponibles
         Cultivo.find({}).exec((err, cultivo) => {
             if(err){
                 return res.status(400).json({
@@ -42,11 +43,11 @@ app.get('/cultivos', function(req, res){
 });
 
 
-
+//Guarda un cultivo creado, los datos deberán ser proporcionados en el body
 app.post('/cultivos', function(req, res){
     
     let body = req.body;
-
+    //Creacción del objeto cultivo
     let cultivo = new Cultivo({
         nombre : body.nombre,
         descripcion : body.descripcion,
@@ -70,7 +71,7 @@ app.post('/cultivos', function(req, res){
         imgMeses : body.imgMeses,
         localizacion : body.localizacion
     });
-
+    //Guardado del objeto
     cultivo.save((err, cultivoDB) =>{
         if(err){
             return res.status(400).json({

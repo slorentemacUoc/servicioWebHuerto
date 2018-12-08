@@ -2,9 +2,7 @@ const express = require('express');
 const _ = require('underscore');
 const Localizacion = require('../models/localizacionObj');
 
-const app = express();
-
-
+//Se obtiene el objeto localización cuyo id es proporcionado
 app.get('/localizacion', function(req, res){
     
     let id = req.query.id || ''
@@ -23,10 +21,11 @@ app.get('/localizacion', function(req, res){
     });
 });
 
+//Guardado del objeto localización proporcionado en el body
 app.post('/localizacion', function(req, res){
     
     let body = req.body;
-
+    //Creacción del objeto localización
     let localizacion = new Localizacion({
         nombre : body.nombre,
         altitudMin: body.altitudMin,
@@ -34,7 +33,7 @@ app.post('/localizacion', function(req, res){
         latitudMin : body.latitudMin,
         latitudMax : body.latitudMax
     });
-
+    //Guardado del objeto localización
     localizacion.save((err, localizacionBD) =>{
         if(err){
             return res.status(400).json({

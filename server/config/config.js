@@ -13,6 +13,7 @@ let urlDB;
 if(process.env.NODE_ENV === 'dev'){
     urlDB = 'mongodb://localhost:27017/huertoUrbano'
 }else{
+    //Si es en producción la dirección se encuentra en una variable heroku de entorno
     urlDB = process.env.MONGO_URI
 }
 

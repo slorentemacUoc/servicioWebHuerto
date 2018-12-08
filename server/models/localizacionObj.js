@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 let Schema = mongoose.Schema;
 
 let localizacionSchema = new Schema({
-
+    //Campos de la tabla localización
     nombre:{
         type:String
     },

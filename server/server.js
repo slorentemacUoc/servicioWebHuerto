@@ -17,7 +17,7 @@ app.use(require('./routes/cultivoLocalizacion'));
 app.use(require('./routes/detCultivoUsuario'));
 app.use(require('./routes/cultivoUsuario'));
 
-
+//Conexión con la base de datos
 mongoose.connect(process.env.URLDB,   { useNewUrlParser: true }, (err,res) =>{
     if(err) throw err;
     console.log("Base de datos online");

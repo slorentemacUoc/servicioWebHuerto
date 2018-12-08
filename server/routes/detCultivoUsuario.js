@@ -3,7 +3,7 @@ const DetCultivoUsuario = require('../models/detCultivoUsuarioObj');
 
 const app = express();
 
-
+//Devuelve un objeto detCultivoUsuario cuyo id sea el proporcionado en la consulta
 app.get('/detCultivoUsuario', function(req, res){
     
     let id = req.query.id || ''
@@ -22,10 +22,11 @@ app.get('/detCultivoUsuario', function(req, res){
     });
 });
 
+//Guarda un objteo cultivo usuario cuyos campos son proporcionados en el body de la consulta
 app.post('/detCultivoUsuario', function(req, res){
     
     let body = req.body;
-
+    //Creacción del objeto
     let detCultivoUsuario = new DetCultivoUsuario({
         fechaInicio: body.fechaInicio,
         cosecha: body.cosecha,
@@ -37,7 +38,7 @@ app.post('/detCultivoUsuario', function(req, res){
         notificarTransplantar: body.notificarTransplantar,
 
     });
-
+    //Guardado del objeto
     detCultivoUsuario.save((err, detCultivoUsuarioBD) =>{
         if(err){
             return res.status(400).json({
@@ -56,7 +57,8 @@ app.post('/detCultivoUsuario', function(req, res){
    
     
 });
-
+//Actualización del objeto detCultivoUsuario cuyo id es el proporcionado, los campos a actualizar
+//se encuentran en el body de la consulta
 app.put('/detCultivoUsuario/:id', function(req, res){
     let id = req.params.id;
     let body = req.body;
@@ -75,7 +77,7 @@ app.put('/detCultivoUsuario/:id', function(req, res){
     });
 });
 
-
+//Se borra el objeto detCultivoUsuario cuyo id es proporcionado
 app.delete('/detCultivoUsuario/:id', function(req,res){
     let id = req.params.id;
     let body = req.body;

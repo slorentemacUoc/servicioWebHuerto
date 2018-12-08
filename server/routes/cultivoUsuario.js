@@ -3,7 +3,7 @@ const CultivoUsuario = require('../models/cultivoUsuarioObj');
 
 const app = express();
 
-
+//Devuelve el cultivoUsuario cuyo id sea el proporcionado en la consulta
 app.get('/cultivoUsuario', function(req, res){
     
     let id = req.query.id || ''
@@ -22,10 +22,11 @@ app.get('/cultivoUsuario', function(req, res){
     });
 });
 
+//Guarda un objeto cultivoUsuario proporcionado en el body
 app.post('/cultivoUsuario', function(req, res){
     
     let body = req.body;
-
+    //Creacción del objeto cultivoUsuario
     let cultivoUsuario = new CultivoUsuario({
         idCultivoUsuario: body.idCultivoUsuario,
         idCultivo: body.idCultivo,
@@ -33,7 +34,7 @@ app.post('/cultivoUsuario', function(req, res){
         nombre: body.nombre,
         imgCultivo: body.imgCultivo
     });
-
+    //Guardado del objeto cultivoUsuario
     cultivoUsuario.save((err, cultivoUsuarioBD) =>{
         if(err){
             return res.status(400).json({
@@ -53,7 +54,7 @@ app.post('/cultivoUsuario', function(req, res){
     
 });
 
-
+//Borrado del objeto cultivoUsuario cuyo identificador es el proporcionado
 app.delete('/cultivoUsuario/:id', function(req,res){
     let id = req.params.id;
     let body = req.body;
