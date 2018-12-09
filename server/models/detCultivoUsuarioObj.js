@@ -2,8 +2,9 @@ const mongoose = require('mongoose');
 
 let Schema = mongoose.Schema;
 
+//Campos de la tabla detCultivoUsuario
 let detCultivoUsuarioSchema = new Schema({
-    //Campos de la tabla detCultivoUsuario
+    
     fechaInicio:{
         type:String
     },

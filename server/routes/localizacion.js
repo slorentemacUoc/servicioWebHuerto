@@ -2,6 +2,8 @@ const express = require('express');
 const _ = require('underscore');
 const Localizacion = require('../models/localizacionObj');
 
+const app = express();
+
 //Se obtiene el objeto localización cuyo id es proporcionado
 app.get('/localizacion', function(req, res){
     

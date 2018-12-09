@@ -1,9 +1,8 @@
 const mongoose = require('mongoose');
 
 let Schema = mongoose.Schema;
-
+//Objetos de la tabla cultivo, el nombre es obligatorio y único
 let cultivoSchema = new Schema({
-    //Objetos de la tabla cultivo, el nombre es obligatorio y único
     nombre:{
         type: String,
         unique: true,

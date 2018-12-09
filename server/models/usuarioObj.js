@@ -2,10 +2,10 @@ const mongoose = require('mongoose');
 //const uniqueValidator = require('mongoose-unique-validator');
 
 let Schema = mongoose.Schema;
-
-let usuarioSchema = new Schema({
-    //Campos de la tabla usuario, los campos nombre, contrasena y email son obligatorios, 
+//Campos de la tabla usuario, los campos nombre, contrasena y email son obligatorios, 
     //así mismo el email debe ser único
+let usuarioSchema = new Schema({
+    
     nombre:{
         type: String,
         required: [true, 'El nombre debe ser introducido']
