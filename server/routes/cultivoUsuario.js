@@ -22,7 +22,7 @@ app.get('/cultivoUsuario', function(req, res){
     });
 });
 
-//Guarda un objeto cultivoUsuario proporcionado en el body
+//Guarda un objeto  cultivoUsuario proporcionado en el body
 app.post('/cultivoUsuario', function(req, res){
     
     let body = req.body;
